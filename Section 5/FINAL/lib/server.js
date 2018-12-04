@@ -21,11 +21,14 @@
 var server = {};
 
  // Instantiate the HTTP server
+// req = Request. res = Response
+// We are creating an instance of the server with the callback and two parameters
 server.httpServer = http.createServer(function(req,res){
    server.unifiedServer(req,res);
  });
 
  // Instantiate the HTTPS server
+// Es para instanciar un servidor HTTPS
 server.httpsServerOptions = {
    'key': fs.readFileSync(path.join(__dirname,'/../https/key.pem')),
    'cert': fs.readFileSync(path.join(__dirname,'/../https/cert.pem'))
